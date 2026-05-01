@@ -1,0 +1,276 @@
+/* 
+    Professional Admin CSS for Royal Dining 
+    Author: Manus
+*/
+
+:root {
+    --primary-color: #e67e22;
+    --secondary-color: #2c3e50;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --warning-color: #f1c40f;
+    --light-gray: #f4f7f6;
+    --white: #ffffff;
+    --text-color: #333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.admin-navbar {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.admin-navbar .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+}
+
+.admin-logo span {
+    color: var(--primary-color);
+}
+
+.admin-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.admin-menu li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-menu li a:hover {
+    color: var(--primary-color);
+}
+
+.logout-btn {
+    background: var(--danger-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+}
+
+.logout-btn:hover {
+    background: #c0392b !important;
+    color: white !important;
+}
+
+/* Main Content */
+.main-content {
+    padding: 3rem 0;
+    min-height: 80vh;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+/* Dashboard Cards */
+.col-4 {
+    width: 23%;
+    background: var(--white);
+    margin: 1%;
+    padding: 2rem;
+    float: left;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.col-4:hover {
+    transform: translateY(-5px);
+}
+
+.col-4 h1 {
+    border: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* Tables */
+.table-responsive {
+    overflow-x: auto;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.tbl-full {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tbl-full th {
+    text-align: left;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+}
+
+.tbl-full td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-danger {
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-primary:hover { background: #d35400; }
+
+.btn-secondary { background: var(--success-color); color: white; }
+.btn-secondary:hover { background: #219150; }
+
+.btn-danger { background: var(--danger-color); color: white; }
+.btn-danger:hover { background: #c0392b; }
+
+/* Forms */
+.tbl-30 {
+    width: 100%;
+    max-width: 600px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+input[type="text"], 
+input[type="number"], 
+input[type="password"], 
+input[type="email"], 
+textarea, 
+select {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Status Badges */
+.status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status.ordered { background: #e3f2fd; color: #1976d2; }
+.status.delivery { background: #fff3e0; color: #f57c00; }
+.status.delivered { background: #e8f5e9; color: #388e3c; }
+.status.cancelled { background: #ffebee; color: #d32f2f; }
+
+/* Messages */
+.success, .success1 {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #28a745;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #dc3545;
+}
+
+/* Footer */
+.admin-footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Login Page Specific */
+.login {
+    width: 100%;
+    max-width: 400px;
+    margin: 10vh auto;
+    background: white;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.login h1 {
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
